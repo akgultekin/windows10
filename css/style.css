@@ -1,0 +1,941 @@
+/* DESKTOP */
+
+* {
+    overflow: hidden;
+    color: white;
+    font-family: Arial;
+    user-select: none;
+    margin: 0;
+}
+
+body {
+    background-image: url("/img/desktop.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(17, 1fr);
+    grid-auto-rows: minmax(9vh, 9vh);
+}
+
+.space {
+
+}
+
+/*-----*/
+
+.app-bin {
+    text-align: center;
+}
+
+.app-bin:hover {
+    background: rgba(255, 255, 255, 0.1);
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-bin-icon {
+    height: 65%;
+    margin: 0.35em 0em;
+}
+
+.app-bin-text {
+    font-size: 0.7vw;
+    text-shadow: 0px 0px 5px black;
+}
+
+/*-----*/
+
+.app-googlechrome {
+    text-align: center;
+}
+
+.app-googlechrome:hover {
+    background: rgba(255, 255, 255, 0.1);
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-googlechrome-icon {
+    height: 65%;
+    margin: 0.3em 0em;
+}
+
+.app-googlechrome-text {
+    font-size: 0.7vw;
+    text-shadow: 0px 0px 5px black;
+}
+
+/*-----*/
+
+.app-notepad {
+    text-align: center;
+}
+
+.app-notepad:hover {
+    background: rgba(255, 255, 255, 0.1);
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-notepad-icon {
+    height: 60%;
+    margin: 0.5em 0em;
+}
+
+.app-notepad-text {
+    font-size: 0.7vw;
+    text-shadow: 0px 0px 5px black;
+}
+
+.taskbar {
+    position: relative;
+    background-color: #191a2b;
+    width: 100vw;
+    height: 7.5%;
+    margin: 2.1em 0em;
+    z-index: 2;
+}
+
+/*---------------------------------------------------*/
+
+/* APPLICATION RECYCLE BIN */
+
+.app-bin-window {
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    display: none;
+    z-index: 0;
+}
+
+.app-bin-window-bar {
+    width: 90%;
+    height: 6%;
+    border-bottom: 1px solid lightgray;
+    float: left;
+}
+
+.app-bin-window-bar-icon {
+    height: 60%;
+    margin: 0.5em 0.5em;
+    float: left;
+}
+
+.app-bin-window-bar-sign {
+    color: gray;
+    font-size: 1vw;
+    margin: 0.3em 0em;
+    float: left;
+}
+
+.app-bin-window-bar-text {
+    color: black;
+    text-align: center;
+    font-size: 0.7vw;
+    margin: 1em 0em;
+}
+
+.app-bin-window-resizebar {
+    width: 10%;
+    height: 6%;
+    border-bottom: 1px solid lightgray;
+}
+
+.app-bin-window-resizebar-maximize {
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-bin-window-resizebar-maximize:hover {
+    background-color: lightgray;
+    transition: 0.5s;
+}
+
+.app-bin-window-resizebar-maximize-icon {
+    width: 21%;
+    height: 35%;
+    image-rendering: pixelated;
+    margin: 0.9em 0em;
+}
+
+.app-bin-window-resizebar-close {
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-bin-window-resizebar-close:hover {
+    background-color: red;
+    transition: 0.5s;   
+}
+
+.app-bin-window-resizebar-close-box {
+    width: 100%;
+    height: 100%;
+}
+
+.app-bin-window-resizebar-close-box:hover {
+    filter: invert(100%);
+}
+
+.app-bin-window-resizebar-close-icon {
+    width: 20%;
+    height: 35%;
+    margin: 1.1em 0em;
+}
+
+.maximize-bin {
+    position: absolute;
+    background-color: white;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.scale-bin-bar {
+    width: 90%;
+    height: 5%;
+}
+
+.translate-bin-sign {
+    margin: 0.6em 0em;
+}
+
+.scale-bin-resizebar {
+    width: 10%;
+    height: 5%;
+}
+
+.scale-bin-maximize-icon {
+    width: 15%;
+    height: 30%;
+}
+
+.scale-bin-close-icon {
+    width: 15%;
+    height: 30%;
+    margin: 1.6em 0em;
+}
+
+.app-bin-window-topbar {
+    width: 85%;
+    height: 7.5%;
+    border-bottom: 1px solid lightgray;
+    float: right;
+}
+
+.app-bin-window-leftbar {
+    width: 15%;
+    height: 85%;
+    border-right: 1px solid lightgray;
+    float: left;
+}
+
+.app-bin-window-textbar {
+    width: 84.9%;
+    height: 10%;
+    float: left;
+}
+
+.app-bin-window-textbar-text {
+    color: gray;
+    text-align: center;
+    margin: 1em 0em;
+}
+
+.app-bin-window-space {
+    display: flex;
+    flex-direction: row;
+    width: 84.9%;
+    height: 85%;
+}
+
+.app-bin-window-space-1 {
+    width: 30%;
+    height: 50%;
+    margin: 1em 1em;
+}
+
+.app-bin-window-space-1-hover {
+    background-color: rgba(181, 229, 255, 0.5)
+}
+
+.app-bin-window-space-2 {
+    width: 30%;
+    height: 50%;
+    margin: 1em 0em;
+}
+
+.app-bin-window-space-2-hover {
+    background-color: rgba(181, 229, 255, 0.5)
+}
+
+.app-bin-window-space-3 {
+    width: 30%;
+    height: 50%;
+    margin: 1em 1em;
+}
+
+.app-bin-window-space-3-hover {
+    background-color: rgba(181, 229, 255, 0.5)
+}
+
+/*-----*/
+
+.app-notepad-window {
+    position: absolute;
+    background-color: white;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    display: none;
+}
+
+.app-notepad-window-bar {
+    width: 90%;
+    height: 6%;
+    border-bottom: 1px solid lightgray;
+    float: left;
+}
+
+.app-notepad-window-bar-icon {
+    height: 60%;
+    margin: 0.5em 0.5em;
+    float: left;
+}
+
+.app-notepad-window-bar-text {
+    color: black;
+    font-size: 0.7vw;
+    margin: 0.7em 0em;
+}
+
+.app-notepad-window-resizebar {
+    width: 10%;
+    height: 6%;
+    border-bottom: 1px solid lightgray;
+}
+
+.app-notepad-window-resizebar-maximize {
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-notepad-window-resizebar-maximize:hover {
+    background-color: lightgray;
+    transition: 0.5s;
+}
+
+.app-notepad-window-resizebar-maximize-icon {
+    width: 21%;
+    height: 35%;
+    image-rendering: pixelated;
+    margin: 0.9em 0em;
+}
+
+.app-notepad-window-resizebar-close {
+    width: 50%;     
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-notepad-window-resizebar-close:hover {
+    background-color: red;
+    transition: 0.5s;   
+}
+
+.app-notepad-window-resizebar-close-box {
+    width: 100%;
+    height: 100%;
+}
+
+.app-notepad-window-resizebar-close-box:hover {
+    filter: invert(100%);
+}
+
+.app-notepad-window-resizebar-close-icon {
+    width: 20%;
+    height: 35%;
+    margin: 0.9em 0em;
+}
+
+.app-notepad-window-space {
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.app-notepad-window-input {
+    border: none;
+    outline: none;
+    color: black;
+    width: 100%;
+    height: 94%;
+    padding-bottom: 48%;
+    font-size: 1.5vw;
+}
+
+.maximize-notepad {
+    position: absolute;
+    background-color: white;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.scale-notepad-bar {
+    width: 90%;
+    height: 5%;
+}
+
+.translate-notepad-text {
+    margin: 1em 0em;
+}
+
+.scale-notepad-resizebar {
+    width: 10%;
+    height: 5%;
+}
+
+.scale-notepad-maximize-icon {
+    width: 15%;
+    height: 30%;
+}
+
+.scale-notepad-close-icon {
+    width: 15%;
+    height: 30%;
+    margin: 1.6em 0em;
+}
+
+/*-----*/
+
+.app-googlechrome-window {
+    position: absolute;
+    background-color: rgb(66, 66, 66);
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    display: none;
+    z-index: auto;
+}
+
+.app-googlechrome-window-bar {
+    width: 90%;
+    height: 6%;
+    border-bottom: 1px solid gray;
+    background-color: #2e2e2e;
+    float: left;
+}
+
+.app-googlechrome-window-bar-icon {
+    height: 60%;
+    margin: 0.5em 0.5em;
+    float: left;
+}
+
+.app-googlechrome-window-text {
+    color: white;
+    font-size: 0.7vw;
+    margin: 0.9em 0em;
+}
+
+.app-googlechrome-window-resizebar {
+    width: 10%;
+    height: 6%;
+    border-bottom: 1px solid gray;
+    background-color: #2e2e2e;
+}
+
+.app-googlechrome-window-resizebar-maximize {
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-googlechrome-window-resizebar-maximize:hover {
+    background-color: rgb(94, 94, 94);
+    transition: 0.5s;
+}
+
+.app-googlechrome-window-resizebar-maximize-icon {
+    width: 21%;
+    height: 35%;
+    image-rendering: pixelated;
+    margin: 0.9em 0em;
+    filter: invert(100%);
+}
+
+.app-googlechrome-window-resizebar-close {
+    width: 50%;
+    height: 100%;
+    background: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    float: left;
+}
+
+.app-googlechrome-window-resizebar-close:hover {
+    background-color: red;
+    transition: 0.5s;   
+}
+
+.app-googlechrome-window-resizebar-close-box {
+    width: 100%;
+    height: 100%;
+}
+
+.app-googlechrome-window-resizebar-close-icon {
+    width: 20%;
+    height: 35%;
+    margin: 0.9em 0em;
+    filter: invert(100%);
+}
+
+.app-googlechrome-window-space {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+
+.app-googlechrome-window-space-titlebox {
+    width: 100%;
+    height: 40%;
+    text-align: center;
+    float: left;
+}
+
+.app-googlechrome-window-space-titlebox-logo {
+    height: 40%;
+    margin: 7em 0em;
+}
+
+.app-googlechrome-window-space-inputbox {
+    width: 100%;
+    height: 55%;
+    text-align: center;
+    float: left;
+}
+
+.app-googlechrome-window-space-inputbox-logo {
+    position: absolute;
+    height: 2.5%;
+    top: 49%;
+    left: 27%;
+    right: 10%;
+    bottom: 0%;
+}
+
+.app-googlechrome-window-space-inputbox-input {
+    position: relative;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    color: black;
+    width: 50%;
+    height: 15%;
+    padding: 1.3% 4.5%;
+    font-size: 0.8vw;
+    resize: none;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    background-color: white;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    top: 54%;
+    right: 25%;
+    display: none;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result1 {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 25%;
+    font-size: 0.9vw;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-icon1 {
+    position: absolute;
+    height: 9%;
+    top: 7%;
+    left: 3%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result1-text {
+    position: absolute;
+    color: black;
+    top: 6%;
+    right: 49%;
+    left: 0%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result1:hover {
+    background-color: lightgray;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result2 {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 25%;
+    font-size: 0.9vw;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-icon2 {
+    position: absolute;
+    height: 9%;
+    top: 32%;
+    left: 3%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result2-text {
+    position: absolute;
+    color: black;
+    top: 32%;
+    right: 48%;
+    left: 0%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result2:hover {
+    background-color: lightgray;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result3 {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 25%;
+    font-size: 0.9vw;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-icon3 {
+    position: absolute;
+    height: 9%;
+    top: 59%;
+    left: 3%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result3-text {
+    position: absolute;
+    color: black;
+    top: 58%;
+    right: 44%;
+    left: 0%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result3:hover {
+    background-color: lightgray;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result4 {
+    background-color: white;
+    border: none;
+    width: 100%;
+    height: 25%;
+    font-size: 0.9vw;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-icon4 {
+    position: absolute;
+    height: 9%;
+    top: 84%;
+    left: 3%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result4-text {
+    position: absolute;
+    color: black;
+    top: 82%;
+    right: 71%;
+    left: 0%;
+}
+
+.app-googlechrome-window-space-inputbox-resultsbar-result4:hover {
+    background-color: lightgray;
+}
+
+.app-googlechrome-window-space-screen {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.app-googlechrome-window-space-screen-one {
+    display: none;
+}
+
+.app-googlechrome-window-space-screen-two {
+    display: none;
+}
+
+.app-googlechrome-window-space-screen-three {
+    display: none;
+}
+
+.app-googlechrome-window-space-screen-four {
+    display: none;
+}
+
+iframe {
+    overflow: hidden;
+}
+
+.maximize-googlechrome {
+    position: absolute;
+    background-color: rgb(66, 66, 66);
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.scale-googlechrome-bar {
+    width: 90%;
+    height: 5%;
+}
+
+.scale-googlechrome-resizebar {
+    width: 10%;
+    height: 5%;
+}
+
+.scale-googlechrome-maximize-icon {
+    width: 15%;
+    height: 30%;
+}
+
+.scale-googlechrome-close-icon {
+    width: 15%;
+    height: 30%;
+    margin: 1.2em 0em;
+}
+
+.scale-googlechrome-titlebox-logo {
+    height: 30%;
+    margin: 15em 0em;
+}
+
+.translate-googlechrome-inputbox-logo {
+    height: 1.5%;
+    top: 47%;
+    right: 0%;
+    left: 33.5%;
+    bottom: 0%;
+}
+
+.scale-googlechrome-inputbox-input {
+    width: 35%;
+    height: 10%;
+    padding: 0.9% 3%;
+}
+
+.scale-googlechrome-inputbox-resultsbar {
+    width: 35%;
+    top: 50%;
+    left: 32.5%;
+}
+
+.show-googlechrome-resultsbar {
+    display: block;
+}
+
+.style-googlechrome-inputbox-input {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.show-googlechrome-screen {
+    display: block;
+}
+
+.show-googlechrome-screen-one {
+    display: block;
+}
+
+.show-googlechrome-screen-two {
+    display: block;
+}
+
+.show-googlechrome-screen-three {
+    display: block;
+}
+
+.show-googlechrome-screen-four {
+    display: block;
+}
+
+.hide-googlechrome-screen {
+    display: none;
+    z-index: 0;
+}
+
+.hide-googlechrome-screen-one {
+    display: none;
+    pointer-events: none;
+}
+
+.hide-googlechrome-screen-two {
+    display: none;
+    pointer-events: none;
+}
+
+.hide-googlechrome-screen-three {
+    display: none;
+    pointer-events: none;
+}
+
+.hide-googlechrome-screen-four {
+    display: none;
+    pointer-events: none;
+}
+
+/*---------------------------------------------------*/
+
+/* TASKBAR */
+
+.taskbar-windows10 {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.taskbar-windows10-icon {
+    height: 40%;
+    margin: 1em 0em;
+}
+
+/*-----*/
+
+.taskbar-app-googlechrome {
+    width: 4%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.taskbar-app-googlechrome:hover {
+    background-color: #333344;
+    transition: 0.1s;
+}
+
+.taskbar-googlechrome-icon {
+    height: 60%;
+    margin: 0.5em 0em;
+}
+
+/*-----*/
+
+.taskbar-app-map {
+    width: 4%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.taskbar-app-map:hover {
+    background-color: #333344;
+    transition: 0.1s;
+}
+
+.taskbar-map-icon {
+    height: 60%;
+    margin: 0.5em 0em;
+}
+
+/*-----*/
+
+.taskbar-app-notepad {
+    width: 4%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+.taskbar-app-notepad:hover {
+    background-color: #333344;
+    transition: 0.1s;
+}
+
+.taskbar-notepad-icon {
+    height: 60%;
+    margin: 0.5em 0em;
+}
+
+/*-----*/
+
+.taskbar-space {
+    width: 70%;
+    height: 100%;
+    float: left;
+}
+
+/*-----*/
+
+.taskbar-timeoftheday {
+    width: 7.5%;
+    height: 100%;
+    border-right: 1px solid white;
+    text-align: center;
+    font-size: 1.2vw;
+    float: left;
+}
+
+.taskbar-timeoftheday:hover {
+    background-color: #333344;
+    transition: 0.1s;
+}
+
+.taskbar-timeoftheday-time-text {
+    margin: 0.1em 0em;
+}
